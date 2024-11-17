@@ -1,0 +1,604 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #f4d9d0;
+  padding-top: 70px;
+  font-size: 12px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+button,
+input,
+textarea,
+a {
+  min-width: 45px;
+  min-height: 45px;
+}
+
+.skip-link {
+  font-size: 1.2em;
+  position: fixed;
+  top: -50px;
+  left: 10px;
+  background-color: #000;
+  color: #fff;
+  padding: 8px;
+  border-radius: 10px;
+  z-index: 100;
+  text-transform: uppercase;
+  text-decoration: none;
+  opacity: 50%;
+}
+
+.skip-link:focus {
+  top: 10px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  height: 70px;
+  width: 100%;
+  margin: auto 0;
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: min-height 0.3s;
+  color: #efefef;
+  background-color: #c75b7a;
+  box-shadow: 2px 2px 2px 2px rgba(8, 8, 8, 0.2);
+  z-index: 10;
+}
+
+header .title {
+  display: flex;
+  margin: auto 0;
+  height: inherit;
+  font-weight: 600;
+  font-size: 1em;
+  text-align: left;
+  align-items: center;
+  color: #fff;
+  column-gap: 5px;
+}
+
+header picture {
+  height: inherit;
+  height: 70px;
+  width: 70px;
+}
+
+header img {
+  height: inherit;
+}
+
+#menu {
+  display: none;
+}
+
+.nav {
+  text-align: right;
+  padding: 0 10px;
+}
+
+.nav_list {
+  justify-content: center;
+}
+
+.nav_item {
+  display: inline-block;
+  height: inherit;
+}
+
+.nav a {
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 1.8em;
+  color: #fff;
+}
+
+.nav a:hover {
+  background-color: #921a40;
+  color: #f4d9d0;
+}
+
+hero-component {
+  display: block;
+  height: 320px;
+}
+
+.hero {
+  text-align: center;
+  min-height: 320px;
+  background-image: url('../public/images/heros/hero-image_2.jpg');
+  background-position: center;
+}
+
+.hero-content {
+  padding: 250px 0 0 0;
+}
+
+.hero-content h1 {
+  color: #fff;
+  margin: auto;
+  font-weight: 800;
+  font-size: 2.2em;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+main {
+  display: block;
+  min-height: 100vh;
+  width: 100%;
+}
+
+#main-content {
+  padding: 10px;
+}
+
+.label {
+  font-weight: 500;
+  font-size: 2.2em;
+  font-style: italic;
+  text-align: center;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  color: #690505;
+}
+
+.restaurant-list {
+  display: grid;
+  width: 100%;
+  min-height: 10vh;
+  gap: 10px;
+}
+
+.restaurant-item {
+  min-height: 200px;
+  border-radius: 5px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.restaurant-item .card-image img,
+.restaurant-item .card-content {
+  width: 100% !important;
+}
+
+.restaurant-item:hover {
+  transform: translate(0, -4px);
+}
+
+.restaurant-item :focus {
+  background: #c0bcbc !important;
+  color: blue !important;
+}
+
+.card-image {
+  display: flex;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  transition: all none;
+  transition: all 0.3s ease-in-out;
+}
+
+/* .card-image img {
+  object-fit: cover;
+  transition: all 0.3s ease-in-out;
+  object-position: center;
+  -o-object-fit: cover;
+} */
+
+.card-image img {
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card-image div#left {
+  position: absolute;
+  left: 0;
+  color: #efefef;
+  border-radius: 5px 0 5px 0;
+  padding: 5px 15px;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-weight: 500;
+  font-size: 1.3rem;
+}
+
+.card-image div#right {
+  position: absolute;
+  right: 0;
+  color: #efefef;
+  border-radius: 0 5px 0 5px;
+  padding: 5px 15px;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-weight: 500;
+  font-size: 1.3rem;
+}
+
+.card-image:hover img {
+  transform: scale(1.05);
+}
+
+.card-content {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  width: 100wh;
+  overflow: hidden;
+}
+
+.restaurant-item a {
+  text-decoration: none;
+  color: #000;
+}
+
+.card-content h1 {
+  display: flex;
+  overflow: hidden;
+  padding-right: 35px;
+  font-size: 1.3rem;
+  letter-spacing: 0;
+  white-space: wrap;
+  text-overflow: ellipsis;
+}
+
+.card-content h2 a:hover,
+.card-content h2 a:focus,
+a:focus {
+  color: blue !important;
+  background: none !important;
+}
+
+.card-content p {
+  font-size: 0.8rem;
+  white-space: wrap;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.search input {
+  height: 45px;
+  border-radius: 30px;
+  padding: 0 16px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  width: 100%;
+  color: #4d0404;
+  border-top: 3px solid #F7E987;
+  border-bottom: 3px solid goldenrod;
+  background-color: white;
+  box-shadow: 3px 3px 3px 3px rgba(19, 12, 1, 0.2);
+}
+
+.search::placeholder {
+  color: #F7E987;
+  opacity: 80%;
+}
+
+.content-heading {
+  font-size: 2.2em;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(65, 2, 2);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.restaurant-item-not-found {
+  text-align: center;
+  font-size: 2em;
+  margin-top: 130px;
+  margin-bottom: 200px;
+}
+
+.detail-content {
+  margin: 10px auto;
+  width: 100%;
+}
+
+.restaurant-detail {
+  width: 100%;
+}
+
+.restaurant-picture {
+  width: 100%;
+  height: 400px;
+  background-size: cover;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.detail-restaurant {
+  display: grid;
+  text-align: left;
+}
+
+.detail-restaurant h2 {
+  font-size: 2em;
+}
+
+.detail-restaurant p {
+  font-size: 1.5em;
+}
+
+.detail-restaurant i {
+  color: rgb(128, 109, 5);
+}
+
+.detail-restaurant-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 0.8em;
+}
+
+.detail-restaurant-info p {
+  margin: 10px;
+}
+
+.detail-restaurant-name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.detail-restaurant-address {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.detail-restaurant-rate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.restaurant-description-title {
+  font-weight: 500;
+  font-size: 2.5em;
+  font-style: italic;
+  text-align: center;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  color: #640606;
+}
+
+.restaurant-description {
+  padding: 10px;
+  text-align: justify;
+}
+
+.restaurant-categories {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  padding: 20px;
+}
+
+.restaurant-category-title {
+  text-align: center;
+  margin: 5px;
+  border-radius: 12px;
+  border: 2px solid #252523;
+  color: #252204;
+  display: inline-block;
+  padding: 5px;
+  font-size: 1.5em;
+}
+
+.detail-restaurant-menu {
+  border: 1px solid gold;
+  background-color: bisque;
+}
+
+.detail-restaurant-menu h2 {
+  font-weight: 500;
+  font-size: 2.5em;
+  font-style: italic;
+  text-align: center;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  color: #5f2b2b;
+}
+
+.restaurant-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding: 20px;
+}
+
+.restaurant-menu h3 {
+  font-weight: 500;
+  font-size: 2.5em;
+  font-style: italic;
+  text-align: left;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  color: #3d0303;
+}
+
+.restaurant-menu p {
+  font-size: 1.5em;
+  margin: 5px;
+}
+
+.restaurant-menu ul {
+  margin: 0 auto;
+}
+
+.restaurant-menu li {
+  list-style-type: none;
+  text-align: left;
+}
+
+.restaurant-menu i {
+  color: #5c0404;
+}
+
+.restaurant-detail-review {
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid gold;
+  background-color: bisque;
+}
+
+.restaurant-review-title {
+  text-align: center;
+  font-size: 2em;
+  margin: auto;
+  border: 1px solid gold;
+}
+
+.review-title {
+  font-size: 1.2em;
+}
+
+.restaurant-review {
+  padding: 10px 20px;
+  border: 1px solid gold;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #F7E987;
+  padding-bottom: 10px;
+  font-size: 1.2em;
+}
+
+.review-name {
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: left;
+}
+
+.review-date {
+  font-size: 1rem;
+}
+
+.review-comment {
+  text-align: left;
+  padding-top: 10px;
+  font-size: 1.5em;
+}
+
+.form-review {
+  padding: 10px 20px;
+  width: 100%;
+  border: 2px solid gold;
+  border-radius: 5px;
+  background-color: bisque;
+
+}
+
+.form-review h2 {
+  font-size: 2em;
+  text-align: center;
+  padding-bottom: 10px;
+  color: #252524;
+}
+
+.form-group {
+  flex-direction: row;
+  text-align: left;
+  margin-top: 10px;
+  padding: 0 10px;
+}
+
+.form-group label {
+  font-size: 1.8em;
+  margin: 5px;
+}
+
+
+.form-control {
+  width: 100%;
+  padding: 5px;
+  font-size: 1rem;
+  min-height: 45px;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 2px solid goldenrod;
+  background-color: white;
+  outline: none;
+}
+
+.form-control::placeholder {
+  color: #968508;
+  opacity: 70%;
+}
+
+.submitReview {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #eaeaea;
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 10px;
+  padding: 20px 10px;
+  border-radius: 15px;
+  border: 2px solid goldenrod;
+  background-color: #252B48;
+  cursor: pointer;
+  margin: auto;
+  width: 100%;
+}
+
+.submitReview:hover {
+  background-color: #F7E987;
+  color: #252B48;
+  transition: transform 0.5s ease;
+}
+
+.like {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 55px;
+  height: 55px;
+  background-color: inherit;
+  color: #f71109;
+  border: none;
+  cursor: pointer;
+  font-size: 40px;
+}
